@@ -1,0 +1,26 @@
+
+
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 5px;
+}
+
+
+#burger {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+@media screen and (max-width: 540px) {
+    #burger {
+        background-color: yellow;
+        padding: 13px;
+    }
+}
