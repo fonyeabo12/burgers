@@ -3,8 +3,9 @@
     <div class="col-6">
         <ul>
             {{#each burgers}}
-            {{#unless devoured}}
-            
+            <p>{{this.burger_name}}</p>
+            {{#unless this.devoured}}
+            <p>{{this.burger_name}}</p>
             {{/unless}}
             {{/each}}
         </ul>
@@ -13,8 +14,8 @@
     <div class="col-6">
         <ul>
             {{#each burgers}}
-            {{#if devoured}}
-            
+            {{#if this.devoured}}
+            <p>{{this.burger_name}}</p>
             {{/if}}
             {{/each}}
         </ul>

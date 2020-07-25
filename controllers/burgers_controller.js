@@ -9,13 +9,13 @@ const connection = require("../config/connection.js")
 
 router.get("/", function(req, res) {
     burger.selectAll((data) => {
-        var hbsObject = {
-            burgers: data
-        };
-        console.log(hbsObject)
-        res.render("index", hbsObject);
-    });
+        // var hbsObject = {
+        //     burgers: data
+        // };
+        console.log(data)
+        res.render("index", {burgers: data});
 });
+})
 
 router.get("/api/burgers", function(req, res) {
     burger.selectAll((data), function() {
@@ -36,21 +36,21 @@ router.post("/", function(req, res) {
     console.log(`you sent ${newBurgerName}`)
 });
 
-router.get("/:id", function(req, res) {
-    const idNumber = req.params.id;
-    const query = "UPDATE burgers SET devoured = true  WHERE id = ?";
-    connection.query(query, [idNumber], (err, result) => {
-        if (err) throw err
-    });
-});
+// router.get("/:id", function(req, res) {
+//     const idNumber = req.params.id;
+//     const query = "UPDATE burgers SET devoured = true  WHERE id = ?";
+//     connection.query(query, [idNumber], (err, result) => {
+//         if (err) throw err
+//     });
+// });
 
-router.delete("/:id", function(req, res) {
-    const idNumber = req.params.id;
-    const query = "DELETE FROM burgers WHERE id = ?;"
-    connection.query(query, [idNumber], function(err, res) {
-        if (err) throw err;
-    })
-});
+// router.delete("/:id", function(req, res) {
+//     const idNumber = req.params.id;
+//     const query = "DELETE FROM burgers WHERE id = ?;"
+//     connection.query(query, [idNumber], function(err, res) {
+//         if (err) throw err;
+//     })
+// });
 
 
 
